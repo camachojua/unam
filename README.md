@@ -21,30 +21,30 @@ Commands
 
 This class creates a cover page and title page from information provided by the user, by default the user should insert comands to indicate the information that will be displayed on the cover (which is replicated in the second page). To specify the author you must insert the command \author{}, to specify the title of the work the command \title{} is needed, for creating the cover page the following commands are defined:
 
-+ \tipotrabajo{tipo}
++ `\tipotrabajo{tipo}`
 Defines the type of document: (thesis, report, etc).
-+ \grado{grado}
++ `\grado{grado}`
 Defines the grade to obtain: (Bachelor, Master, PhD).
-+ \fechaexamen{fecha} 
++ `\fechaexamen{fecha}` 
 Defines the date of your examination: (April 30th, 2019).
-+ \asesor{asesor}
++ `\asesor{asesor}`
 Defines your advisor's name.
-+ \programaestudio{programa}
-+ \campoconocimiento{conocimiento}
-+ \campodisciplinario{disciplinario}
-+ \instituto{instituto}
-+ \facultad{facultad}
-+ \universidad{universidad}
-+ \escudouniversidad{escudoU}
++ `\programaestudio{programa}`
++ `\campoconocimiento{conocimiento}`
++ `\campodisciplinario{disciplinario}`
++ `\instituto{instituto}`
++ `\facultad{facultad}`
++ `\universidad{universidad}`
++ `\escudouniversidad{escudoU}`
 Points to the path (relative to the /img/ directory) of your university coat-of-arms.
-+ \escudofacultad{escudoF}
++ `\escudofacultad{escudoF}`
 Points to the path (relative to the /img/ directory) of your school coat-of-arms.
-+ \lugar{lugar}
++ `\lugar{lugar}`
 Defines the place where your exam will be applied.
-+ \tema{tema}
++ `\tema{tema}`
 Defines the topic of your work.
-+ \presidente{presidente}
-+ \secretario{secretario}
-+ \vocal{vocal}
-+ \primersuplente{suplente1}
-+ \segundosuplente{suplente2}
++ `\presidente{presidente}`
++ `\secretario{secretario}`
++ `\vocal{vocal}`
++ `\primersuplente{suplente1}`
++ `\segundosuplente{suplente2}`

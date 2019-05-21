@@ -151,7 +151,7 @@
 \newcommand{\secretario}[1]{\renewcommand{\@secretario}{#1}}
 
 \newcommand{\@vocal}{}
-\newcommand{\vocas}[1]{\renewcommand{\@vocal}{#1}}
+\newcommand{\vocal}[1]{\renewcommand{\@vocal}{#1}}
 
 \newcommand{\@primersuplente}{}
 \newcommand{\primersuplente}[1]{\renewcommand{\@primersuplente}{#1}}

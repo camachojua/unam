@@ -19,7 +19,7 @@ This class inherits the book class, so, in escence one should create volumes, ch
 Commands
 ---------------------
 
-This class creates a cover page and title page from information provided by the user, by default the user should insert comands to indicate the information that will be displayed on the cover (which is replicated in the second page). To specify the author you must insert the command \author{}, to specify the title of the work the command \title{} is needed, for creating the cover page the following commands are defined:
+This class creates a cover page and title page from information provided by the user, by default the user should insert comands to indicate the information that will be displayed on the cover (which is replicated in the second page). To specify the author you must insert the command `\author{}`, to specify the title of the work the command `\title{}` is needed, for creating the cover page the following commands are defined:
 
 + `\tipotrabajo{tipo}`
 Defines the type of document: (thesis, report, etc).
@@ -48,3 +48,58 @@ Defines the topic of your work.
 + `\vocal{vocal}`
 + `\primersuplente{suplente1}`
 + `\segundosuplente{suplente2}`
+
+Example
+---------------------
+
+A minimal working example should have this:
+
+```
+\documentclass[12pt]{unam}
+
+%% Selección de la fuente a utilizar (modo texto y matemático)
+%\usepackage[cmintegrals, cmbraces]{newtxmath}
+%\usepackage{garamondx, ebgaramond-maths}
+%\usepackage{garamondx, mathdesign}
+\usepackage{garamondx} %% Fuente preferida (opcional)
+\usepackage[garamondx, cmintegrals, cmbraces]{newtxmath} %% Fuente preferida (opcional)
+%% Fin selección de la fuente
+
+\author{Nombre Apellidos}
+\title{Caracterización y mejora aerodinámica de un vehículo tipo ATV}
+\grado{Maestro en Ingeniería}
+\fechaexamen{2 de Mayo 2019}
+\tipotrabajo{Tesis}
+\asesor{Dr. Nombre Apellidos}
+\instituto{Instituto Donde Estudio}
+\facultad{Facultad de Ingeniería}
+\universidad{Universidad Nacional Autónoma de México}
+\lugar{Juriquilla, Querétaro}
+\programaestudio{Programa de Maestría y Doctorado en Ingeniería Mecánica}
+\campoconocimiento{Ingeniería automotriz}
+\campodisciplinario{Mecánica}
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\listoffigures
+
+\input{tex/prefacio}
+
+\mainmatter
+\input{tex/introduccion}
+\input{tex/marcoteorico}
+\input{tex/desarrollo}
+\input{tex/pruebas}
+\input{tex/resultados}
+\input{tex/conclusiones}
+
+\appendix
+\input{tex/programas}
+\input{tex/planos}
+\backmatter
+\printbibliography[heading=bibintoc]
+
+\end{document}
+```

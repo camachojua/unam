@@ -4,17 +4,17 @@ UNAM Class
 This class inherits the book class, so, in escence one should create volumes, chapters, front chapters, appendixes, and so on. Before using this class the user must create the following document structure:
 
 + /working_directory/
-++ thesis.tex
-++ bibliography.bib
+  + thesis.tex
+  + bibliography.bib
 + /tex/
-++ frontMatter.tex
-++ foreword.tex
-++ chapter1.tex
-++ chapterN.tex
-++ appendix1.tex
-++ appendixN.tex
+  + frontMatter.tex
+  + foreword.tex
+  + chapter1.tex
+  + chapterN.tex
+  + appendix1.tex
+  + appendixN.tex
 + /img/
-++ pictures{.png, .jpg, .pdf}
+  + pictures{.png, .jpg, .pdf}
 
 Commands
 ---------------------

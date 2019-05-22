@@ -1,7 +1,12 @@
 UNAM Class
 ====================
 
-This class inherits the book class, so, in escence one should create volumes, chapters, front chapters, appendixes, and so on. Before using this class the user must create the following document structure:
+Class for creating dissertation documents according to the National Autonomous University of
+Mexico (UNAM) guidelines.
+
+This class inherits the book class, so, in escence one should create
+volumes, chapters, front chapters, appendixes, and so on. Before using
+this class the user must create the following document structure:
 
 + /working_directory/
   + thesis.tex
@@ -19,7 +24,13 @@ This class inherits the book class, so, in escence one should create volumes, ch
 Commands
 ---------------------
 
-This class creates a cover page and title page from information provided by the user, by default the user should insert comands to indicate the information that will be displayed on the cover (which is replicated in the second page). To specify the author you must insert the command `\author{}`, to specify the title of the work the command `\title{}` is needed, for creating the cover page the following commands are defined:
+This class creates a cover page and title page from information
+provided by the user, by default the user should insert comands to
+indicate the information that will be displayed on the cover (which is
+replicated in the second page). To specify the author you must insert
+the command `\author{}`, to specify the title of the work the command
+`\title{}` is needed, for creating the cover page the following
+commands are defined:
 
 + `\tipotrabajo{tipo}`
 Defines the type of document: (thesis, report, etc).
@@ -52,7 +63,7 @@ Defines the topic of your work.
 Example
 ---------------------
 
-A minimal working example should have this:
+A minimal working example should have this structure:
 
 ```
 \documentclass[12pt]{unam}
@@ -103,3 +114,19 @@ A minimal working example should have this:
 
 \end{document}
 ```
+
+License
+---------------------
+
+unam-thesis is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+unam-thesis is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with unam-thesis. If not, see <https://www.gnu.org/licenses/>.

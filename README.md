@@ -66,7 +66,7 @@ Example
 A minimal working example should have this structure:
 
 ```
-\documentclass[12pt]{unam}
+\documentclass[12pt]{unam-thesis}
 
 %% Selección de la fuente a utilizar (modo texto y matemático)
 %\usepackage[cmintegrals, cmbraces]{newtxmath}

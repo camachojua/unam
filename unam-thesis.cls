@@ -1,4 +1,4 @@
-\ProvidesClass{unam}[2019/05/20 v0.5 Juan Camacho]
+\ProvidesClass{unam-thesis}[2019/06/15 v0.6 Juan Camacho]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -20,15 +20,37 @@
 \renewcommand{\arraystretch}{1.3}
 \graphicspath{{./img/}}
 \usepackage[tracking=true]{microtype}
+\usepackage{csquotes}
+
 \usepackage[backend=biber,style=phys,citestyle=numeric]{biblatex}
 \DeclareLanguageMapping{spanish}{spanish-apa}
-\usepackage{csquotes}
 \addbibresource{bibliografia.bib}
+
+%% Soporte para incrustar imágenes generadas desde inkscape
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{transparent}
+
+\newcommand{\inkscape}[2]{%
+    \def\svgwidth{#2}
+    \import{./img/}{#1.pdf_tex}
+}
+
+%% Soporte para la nomenclatura
+\usepackage[intoc,spanish]{nomencl}
+
 \usepackage{listingsutf8}
 \usepackage{inconsolata}
+\usepackage[nottoc]{tocbibind}
 
 %% Derivada material
 \newcommand{\mdv}[2]{\frac{\mathrm{\textbf{D}{#1}}}{\mathrm{\textbf{D}{#2}}}}
+
+%% Lista de figuras en el índice
+%% \addcontentsline{toc}{chapter}{\listfigurename}
+
+%% Indicamos la creación de la nomenclatura
+\makenomenclature
 
 %% Selección de fuente para fragmentos de código
 \everymath{\displaystyle}
@@ -54,7 +76,7 @@
 
 %% Definición de las cabeceras del documento
 \usepackage{fancyhdr}
-\fancypagestyle{unam}{
+\fancypagestyle{unam-thesis}{
   \fancyhead{}
   \fancyhead[RO]{\if@mainmatter \rightmark\fi}
   \fancyhead[LE]{\if@mainmatter \rightmark\fi}
@@ -63,7 +85,7 @@
   \fancyfoot[C]{\thepage}
 }
 
-\pagestyle{unam}
+\pagestyle{unam-thesis}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
 \renewcommand{\headrulewidth}{1pt}
 \setlength{\headheight}{16pt}
@@ -162,7 +184,7 @@
 % Insertamos metadatos en el PDF
 \hypersetup{
   pdfinfo={
-    Producer={LaTeX with 'unam' class by Juan Camacho}
+    Producer={LaTeX with 'unam-thesis' class by Juan Camacho}
   }
 }
 
@@ -302,7 +324,7 @@
       \vfill
 
 
-      LUGAR O LUGARES DONDE SE REALIZÓ LA TESIS: 
+      LUGAR DONDE SE REALIZÓ LA TESIS: 
       \expandafter\MakeUppercase\expandafter{\@lugar}{. }
 
 

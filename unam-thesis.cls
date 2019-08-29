@@ -1,11 +1,11 @@
-\ProvidesClass{unam-thesis}[2019/06/15 v0.6 Juan Camacho]
+\ProvidesClass{unam-thesis}[2019/06/25 v0.7 Juan Camacho]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 \ifx\pdfoutput\undefined
    \LoadClass[dvips, letterpaper]{book}
 \else
-   \LoadClass[letterpaper]{book}
+   \LoadClass[openany,letterpaper]{book}
 \fi
 
 \usepackage[spanish,mexico]{babel}
@@ -37,11 +37,12 @@
 }
 
 %% Soporte para la nomenclatura
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 \usepackage[intoc,spanish]{nomencl}
 
 \usepackage{listingsutf8}
 \usepackage{inconsolata}
-\usepackage[nottoc]{tocbibind}
+
 
 %% Derivada material
 \newcommand{\mdv}[2]{\frac{\mathrm{\textbf{D}{#1}}}{\mathrm{\textbf{D}{#2}}}}
@@ -117,6 +118,36 @@
 \renewcommand*{\lstlistlistingname}{Índice de códigos}
 %\usepackage[colorlinks=true,pdfusetitle]{hyperref}
 \usepackage[pdfusetitle,hidelinks]{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Esta sección permite insertar un nuevo capítulo en cualquier página al %
+% inicio del libro.                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\emptypage@emptypage{%
+    \hbox{}%
+    \thispagestyle{empty}%
+    \newpage%
+    \if@twocolumn%
+        \hbox{}%
+        \newpage%
+    \fi%
+}
+\let\oldcleardoublepage\cleardoublepage
+\newcommand{\noblankpage}{%
+  \def\cleardoublepage{%
+      \clearpage%
+      \if@twoside%
+          \ifodd\c@page%
+              % nada 
+          \else%
+              \emptypage@emptypage%
+          \fi%
+      \fi%
+  }%
+}
+\newcommand{\withblankpage}{%
+  \let\cleardoublepage\oldcleardoublepage%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definición de la portada %
@@ -282,7 +313,7 @@
       \vfill
 
       \expandafter\MakeUppercase\expandafter{\@tipotrabajo}\\
-      {QUE PARA OPTAR POR EL GRADO DE:}\\
+      {QUE PARA OBTENER POR EL GRADO DE:}\\
       \expandafter\MakeUppercase\expandafter{\@grado}
 
       \vfill
